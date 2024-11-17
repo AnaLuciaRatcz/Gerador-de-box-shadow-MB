@@ -33,11 +33,11 @@ class BoxShadowGenerator{
         this.spreadRef.value = this.spread.value;
         this.blurRef.value = this.blur.value;
 
-        this.applyRule();
-        this.showRule();
+        this.applyRule(); //aplica a alteração no quadrado amarelo
+        this.showRule();  //aplica a alteração no quadro abaixo
     }
 
-    applyRule(){ //método para aplicar a regra acima
+    applyRule(){ //método para aplicar a regra acima no quadrado amarelo
         this.previewBox.style.boxShadow = `${this.horizontalRef.value}px ${this.verticalRef.value}px ${this.blurRef.value}px ${this.spreadRef.value}px #000000`
         this.currentRule = this.previewBox.style.boxShadow;   //exibir a regra no quadro de baixo
     }
@@ -103,7 +103,7 @@ const boxShadow = new BoxShadowGenerator(
 boxShadow.initialize();
 
 //Eventos
-horizontal.addEventListener("input", (e) =>{
+horizontal.addEventListener("input", (e) =>{ //evento utilizado é o input que dispara a cada modificação do valor
     const value = e.target.value;
 
     boxShadow.updateValue("horizontal", value);
